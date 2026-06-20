@@ -33,7 +33,7 @@ export function Contact() {
         <div className="contact-side">
           <Card><Mail className="inline-icon" /><h3>Email</h3><p>hello@devorbithub.com</p></Card>
           <Card><Phone className="inline-icon" /><h3>Phone</h3><p>Available on request</p></Card>
-          <Card><MapPin className="inline-icon" /><h3>Location</h3><p>India, serving clients remotely.</p></Card>
+          <Card><MapPin className="inline-icon" /><h3>Location</h3><p>Bangalore, India (Remote).</p></Card>
           <div className="map-placeholder">Google Maps Placeholder</div>
         </div>
       </section>

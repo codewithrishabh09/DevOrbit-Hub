@@ -19,7 +19,7 @@ export const stats = [
   { value: "25+", label: "Projects shipped" },
   { value: "9", label: "Service verticals" },
   { value: "500+", label: "Developer reach" },
-  { value: "24/7", label: "Build mindset" }
+  { value: "24hrs+", label: "Build mindset" }
 ];
 
 export const services = [
@@ -90,7 +90,7 @@ export const leaders = [
     imagePosition: "center 22%",
     bio: "Creative Full Stack Developer focused on scalable architectures, user experience, backend engineering, and product development.",
     skills: ["React", "TypeScript", "JavaScript", "Node.js", "Express.js", "MongoDB", "REST APIs", "UI/UX"],
-    highlights: ["Co-Founder", "Full Stack Engineer", "Mentor", "Product Builder", "Technology Contributor"]
+    highlights: ["Co-Founder of DevOrbit Hub", "Full Stack Engineer", "Mentor", "Product Builder", "Technology Contributor"]
   }
 ];
 
