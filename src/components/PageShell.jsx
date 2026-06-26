@@ -1,9 +1,14 @@
 import { motion } from "framer-motion";
-import { pageTransition } from "../animations/reveal.js";
 
-export function PageShell({ children, className = "" }) {
+export function PageShell({ children }) {
   return (
-    <motion.div className={className} {...pageTransition}>
+    <motion.div
+      initial={{ opacity: 0, y: 15 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -15 }}
+      transition={{ duration: 0.4, ease: "easeOut" }}
+      className="flex flex-col min-h-screen"
+    >
       {children}
     </motion.div>
   );

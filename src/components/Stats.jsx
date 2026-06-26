@@ -1,32 +1,21 @@
-import { motion, useInView, useMotionValue, useSpring } from "framer-motion";
-import { useEffect, useRef } from "react";
 import { stats } from "../data/siteData.js";
-
-function Count({ value }) {
-  const numeric = Number.parseInt(value, 10);
-  const count = useMotionValue(0);
-  const spring = useSpring(count, { duration: 1600, bounce: 0 });
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true });
-  const canAnimate = !Number.isNaN(numeric) && !value.includes("/");
-
-  useEffect(() => {
-    if (inView && canAnimate) count.set(numeric);
-  }, [canAnimate, count, inView, numeric]);
-
-  if (!canAnimate) return <span ref={ref}>{value}</span>;
-  return <motion.span ref={ref}>{spring}</motion.span>;
-}
 
 export function Stats() {
   return (
-    <section className="stats-grid">
-      {stats.map((stat) => (
-        <div className="stat" key={stat.label}>
-          <strong><Count value={stat.value} />{stat.value.replace(/[0-9]/g, "")}</strong>
-          <span>{stat.label}</span>
+    <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 w-full max-w-[1200px] mx-auto mb-16 border border-[var(--color-border)] rounded-2xl bg-[rgba(255,255,255,0.04)] backdrop-blur-xl overflow-hidden shadow-xl" style={{ width: "min(1200px, calc(100% - 32px))" }}>
+      {stats.map((stat, i) => (
+        <div
+          key={stat.label}
+          className={`p-8 ${i < stats.length - 1 ? 'border-b sm:border-b-0 sm:border-r border-[var(--color-border)]' : ''}`}
+        >
+          <strong className="block text-4xl md:text-5xl font-extrabold text-[var(--color-text-primary)] mb-2">
+            {stat.value}
+          </strong>
+          <span className="text-sm md:text-base text-[var(--color-text-secondary)] font-medium">
+            {stat.label}
+          </span>
         </div>
       ))}
-    </section>
+    </div>
   );
 }
